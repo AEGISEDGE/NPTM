@@ -21,6 +21,10 @@ palmettopy==3.3
 prefetch-generator==1.0.3
 
 wordcloud==1.8.2.2
+
+tqdm
+
+argparse
 ```
 
 OS and driver enviroment:
