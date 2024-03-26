@@ -13,14 +13,6 @@ from torch.nn.parameter import Parameter
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from wordcloud import WordCloud
 
-from sentence_transformers import SentenceTransformer
-
-# from torch.distributions.exponential import Exponential
-# from torch.distributions.gamma import Gamma
-# from torch.distributions.gumbel import Gumbel
-from torch.distributions.normal import Normal
-from torch.distributions.dirichlet import Dirichlet
-
 from torch.distributions.kl import kl_divergence
 #====================================================================================================================================================
 # Model definition
