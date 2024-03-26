@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import spacy
 import math, sys, pickle
 #import symbolic constant
 from torch.utils.data import Dataset
