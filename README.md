@@ -25,6 +25,8 @@ wordcloud==1.8.2.2
 tqdm
 
 argparse
+
+matplotlib
 ```
 
 OS and driver enviroment:
