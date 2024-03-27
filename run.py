@@ -62,8 +62,6 @@ parser.add_argument('--ulr', type=float, default=5.0, metavar='N',
     help="The lr ratio for user network optimizer.")
 parser.add_argument('--savckpt', action="store_true", 
     help="Enable automatic checkpoint save.")
-parser.add_argument('--expvec', action="store_true", 
-    help="Export vectors when training is finished.")
 parser.add_argument('--disablerapidload', action='store_true',
     help="Flag for disable RAPID load corpus from previous binary file.")
 parser.add_argument('--disabledisplay', action='store_false',
