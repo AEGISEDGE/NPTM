@@ -220,31 +220,6 @@ def main(args):
     #
     tmodel=tmodel.to(device)
     tmodel.eval()
-    if args.expvec:
-        print("Exporting document embeddings... ...")
-        train_vecs, train_z = Export_vecs(tmodel, train_loader, device, "train")
-        test_vecs, test_z = Export_vecs(tmodel, test_loader, device, "test")
-        # Dumping exported result
-        cluster_exp_dir = 'cluster_exp' + run_id_str
-        if not os.path.exists(cluster_exp_dir):
-            os.makedirs(cluster_exp_dir)
-        print("Saving exported vectors......")
-        pickle.dump(train_vecs, open(cluster_exp_dir + os.sep + "train_vecs.bin", 'wb'))
-        pickle.dump(test_vecs, open(cluster_exp_dir + os.sep + "test_vecs.bin", 'wb'))
-        pickle.dump(train_z, open(cluster_exp_dir + os.sep + "train_vecs-z.bin", 'wb'))
-        pickle.dump(test_z, open(cluster_exp_dir + os.sep + "test_vecs-z.bin", 'wb'))
-
-#=====================================================================================================
-
-def Export_vecs(model, dataloader, device, corpus_info):
-    print("Exporting %s vectors... ..." % corpus_info)
-    vecs_list = []
-    z_list = []
-    for rawtxt, doc_bow, _, uid in dataloader:
-        _, _, _, _, z, vecs = model(uid.to(device), rawtxt, doc_bow.to(device))
-        vecs_list += zip(uid, vecs.detach().cpu().numpy())
-        z_list += zip(uid, z.detach().cpu().numpy())
-    return vecs_list, z_list
 
 #=====================================================================================================
 
