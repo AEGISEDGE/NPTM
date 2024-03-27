@@ -53,8 +53,8 @@ GPU:    NVIDIA A100 80G
 Plz prepare following data and models in right directory:
 
 + "embedding/word2vec_glove.6B.100d.txt.bin" for GloVe word embedding file
-+ "data/twitter-2016" for preprocessed twitter political archive data.
-+ "data/authorblog" for preprocessed authorblog data.
++ "data/twitter-2016" for preprocessed twitter political archive data and vocabulary.
++ "data/authorblog" for preprocessed authorblog data and vocabulary.
 + "data/huggingface/" for pretrain language model to be load.
 
 To load different pretrain language models, we defined a directory and corresponding hidden dimension dictionary variable in run.py file(Line-79). Plz download ur selected pretrain language model files and place them at corresponding directory:
