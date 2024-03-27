@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pytorch_lightning as pl
 
-from model import NVUTM
+from model import NPTM
 from dataset import UserDocCorpus
 from utils import build_wordembedding_from_dict
 
@@ -166,7 +166,7 @@ def main(args):
               "note-": "" if args.note=="None" else args.note,
               "seed":args.seed}
     run_id_str = "_".join([title + str(values) for title,values in run_id.items()])
-    tmodel = NVUTM(vocabulary_size=vocabulary_size, 
+    tmodel = NPTM(vocabulary_size=vocabulary_size, 
         n_user=n_user,
         n_hidden=args.n_hidden, 
         n_topics=args.topics, 
@@ -195,14 +195,14 @@ def main(args):
         checkpoint_callback = ModelCheckpoint(
             monitor='val_loss',
             dirpath="sav" + os.sep ,
-            filename='nvutm-tw'+ run_id_str +'{epoch:02d}-{val_loss:.3f}.bin',
+            filename='NPTM-tw'+ run_id_str +'{epoch:02d}-{val_loss:.3f}.bin',
             save_top_k=5,
             mode='min',
             save_last=True,
             save_weights_only=True)
         callback_list.append(checkpoint_callback)
     # Tensorboard settings
-    logger = TensorBoardLogger('tb_logs', name='NVUTM-tw-'+run_id_str)
+    logger = TensorBoardLogger('tb_logs', name='NPTM-tw-'+run_id_str)
     # Model trainer
     trainer = pl.Trainer(accelerator='gpu', 
                         max_epochs=args.max_epoch,
