@@ -64,7 +64,7 @@ D_PLM={"bert-base": ("data/huggingface_model/bert-base-uncased", 768),
        "sbert-all-mpnet": ("data/huggingface_model/sentence-transformers/all-mpnet-base-v2/", 768)}
 ```
 
-We provide processed pickle binary version of twitter-political-archive binary in "corpus_obj.rar". u can decompress it at the same directory of run.py. The raw data of Twitter Political Archive is available at https://github.com/bpb27/political_twitter_archivee. To load binary corpus object, plz be sure the "disablerapidload" argument is not set or it will rebuild corpus from "data/" path. u can acquire raw Authorblog data at https://www.kaggle.com/datasets/rtatman/blog-authorship-corpus and prepare it as the same format as provided binary file. u can use Python pickle to load and check the format for given binary file.
+We provide processed pickle binary version of twitter-political-archive binary in "corpus_obj.rar". u can decompress it at the same directory of "run.py". For twitter political archive vocabulary file "vocab.in", plz place it at "data/twitter2016/". The raw data of Twitter Political Archive is available at https://github.com/bpb27/political_twitter_archivee. To load binary corpus object, plz be sure the "disablerapidload" argument is not set or it will rebuild corpus from "data/" path. u can acquire raw Authorblog data at https://www.kaggle.com/datasets/rtatman/blog-authorship-corpus and prepare it as the same format as provided binary file. u can use Python pickle to load and check the format for given binary file.
 
 ### Evaluation setting
 
