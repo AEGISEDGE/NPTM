@@ -296,7 +296,7 @@ class Generative_model(pl.LightningModule):
         #----------------------------------------------------------------------------------------
         return recon_loss, z, theta
 #====================================================================================================================================================
-# Neural Generavtive User Profiling model
+# Neural Personalized Topic Model
 class NPTM(pl.LightningModule):
     def __init__(self, 
         n_topics, 
