@@ -297,7 +297,7 @@ class Generative_model(pl.LightningModule):
         return recon_loss, z, theta
 #====================================================================================================================================================
 # Neural Generavtive User Profiling model
-class NVUTM(pl.LightningModule):
+class NPTM(pl.LightningModule):
     def __init__(self, 
         n_topics, 
         n_hidden,
@@ -319,7 +319,7 @@ class NVUTM(pl.LightningModule):
         wordembedding_mat=None,
         topk=10,
         measure="npmi"):
-        super(NVUTM, self).__init__()
+        super(NPTM, self).__init__()
         self.n_topics=n_topics
         self.n_user=n_user
         self.vocabulary_size=vocabulary_size
