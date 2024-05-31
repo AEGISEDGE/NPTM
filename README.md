@@ -53,9 +53,10 @@ GPU:    NVIDIA A100 80G
 Plz prepare following data and models in right directory:
 
 + "embedding/word2vec_glove.6B.100d.txt.bin" for GloVe word embedding file
-+ "data/corpus/twitter-2016" for preprocessed twitter political archive data and vocabulary.
++ "data/corpus/twitter-2016" for preprocessed twitter political archive data and vocabulary. plz unzip the twitter2016.zip file to this directory.
 + "data/corpus/authorblog" for preprocessed authorblog data and vocabulary.
-+ "data/huggingface/" for pretrain language model to be load.
++ "data/huggingface_model/bert-base-uncased/" for BERT-BASE-UNCASED model files to be load.
++ "data/huggingface_model/sentence-transformer/all-mpnet-base-v2/" for Sentence-Transformer model files to be load. 
 
 To load different pretrain language models, we defined a directory and corresponding hidden dimension dictionary variable in run.py file(Line-79). Plz download ur selected pretrain language model files and place them at corresponding directory:
 
@@ -63,8 +64,9 @@ To load different pretrain language models, we defined a directory and correspon
 D_PLM={"bert-base": ("data/huggingface_model/bert-base-uncased", 768),
        "sbert-all-mpnet": ("data/huggingface_model/sentence-transformers/all-mpnet-base-v2/", 768)}
 ```
+plz place the corresponding pretrained language model files to their directory before running.
 
-We provide processed pickle binary version of twitter-political-archive binary in "corpus_obj.rar". u can decompress it at the same directory of "run.py". For twitter political archive vocabulary file "vocab.in", plz place it at "data/twitter2016/". The raw data of Twitter Political Archive is available at https://github.com/bpb27/political_twitter_archivee. To load binary corpus object, plz be sure the "disablerapidload" argument is not set or it will rebuild corpus from "data/" path. u can acquire raw Authorblog data at https://www.kaggle.com/datasets/rtatman/blog-authorship-corpus and prepare it as the same format as provided binary file. u can use Python pickle to load and check the format for given binary file.
+We provide zipped twitter-political-archive file in "twitter2016.zip" in "data/corpus/twitter2016/". plz unzip this file to this directory before running. The raw data of Twitter Political Archive is available at https://github.com/bpb27/political_twitter_archivee. The first running would rebuild the corpus object and serialize into "corpus_obj.bin" to accelerate the next run. When the "disablerapidload" argument is not set, it will rebuild corpus from select dataset in "data-path" argument. u can acquire raw Authorblog data at https://www.kaggle.com/datasets/rtatman/blog-authorship-corpus and prepare it as the same format as provided binary file. The selected vocabulary has uploaded at "data/corpus/autherblog/vocab.bin". u can use Python pickle to load and check the format for given binary file.
 
 ### Evaluation setting
 
