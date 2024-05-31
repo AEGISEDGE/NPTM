@@ -68,7 +68,7 @@ parser.add_argument('--disabledisplay', action='store_false',
     help="Flag for disable progress bar and model summary in pytorch lightning.")
 
 #=======================================Corpus path setup=============================================
-parser.add_argument('--data-path', default='twitter2016', metavar='N',
+parser.add_argument('--data-path', default='corpus/twitter2016', metavar='N',
     help="Directory for corpus.")
 
 # Pre-download pretrain language model options to be loaded
