@@ -70,7 +70,7 @@ We provide zipped twitter-political-archive file in "twitter2016.zip" in "data/c
 
 ### Evaluation setting
 
-We leverage Palmetto(https://github.com/dice-group/Palmetto) into this code for automatic topic coherence calculating. Plz prepare Palmetto server and corresponding index files. Then modify the following line-149 in "run.py" to specify ur Palmetto server URL:
+We leverage Palmetto(https://github.com/dice-group/Palmetto) into this code for automatic topic coherence calculating. Plz prepare Palmetto server endpoint and corresponding index files. Then modify the following line-149 in "run.py" to specify ur own Palmetto endpoint URL:
 ```
 tc = Palmetto("http://127.0.0.1:7777/service/", timeout=60)
 ```
