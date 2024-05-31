@@ -52,7 +52,7 @@ GPU:    NVIDIA A100 80G
 
 Plz prepare following data and models in right directory:
 
-+ "embedding/word2vec_glove.6B.100d.txt.bin" for GloVe word embedding file
++ "embedding/word2vec_glove.6B.100d.txt.bin" dictionary object of GloVe word embedding file. Using provided ``glove_vec_2_dict.py`` in ``embedding`` directory to covert original glove word embedding into this format.
 + "data/corpus/twitter-2016" for preprocessed twitter political archive data and vocabulary. plz unzip the twitter2016.zip file to this directory.
 + "data/corpus/authorblog" for preprocessed authorblog data and vocabulary.
 + "data/huggingface_model/bert-base-uncased/" for BERT-BASE-UNCASED model files to be load.
